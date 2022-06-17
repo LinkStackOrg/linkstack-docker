@@ -27,7 +27,7 @@ RUN apk --no-cache --update \
     php8-phar \
     php8-session \
     php8-xml \
-	php8-tokenizer \
+    php8-tokenizer \
     php8-zip \
     && mkdir /htdocs
 
