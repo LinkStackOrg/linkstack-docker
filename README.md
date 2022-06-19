@@ -1,8 +1,83 @@
-# [See on Docker Hub](https://hub.docker.com/r/julianprieber/littlelink-custom)
+<h1 align="center">
+  <br>
+  <a href="https://hub.docker.com/r/julianprieber/littlelink-custom"><img src="https://i.imgur.com/5o0w0jk.png" alt="LittleLink Custom"></a>
+</h1>
 
-Based on Alpine Linux and running Apache2 with PHP 8.
+<h3 align="center">Pull, deploy, enjoy!</h3><br>
 
-## Optional environment variables
+<p align="center">
+  <a href="#1">About</a> •
+  <a href="#2">About LittleLink Custom</a> •
+  <a href="#3">Pull</a> •
+  <a href="#4">Deployment</a> •
+  <a href="#5">Build</a>
+</p><br>
+
+
+<p align="center">
+<a href="https://github.com/JulianPrieber/llc-docker/stargazers"><img src="https://img.shields.io/github/stars/julianprieber/llc-docker?logo=github&style=flat&logo=appveyor&label=star%20this%20project"></img></a>
+<a href="https://discord.littlelink-custom.com"><img src="https://img.shields.io/discord/955765706111193118?color=4A55CC&label=Discord&logo=discord&style=flat&logo=appveyor"></img></a>
+<a href="https://github.com/sponsors/julianprieber"><img src="https://img.shields.io/github/sponsors/JulianPrieber?color=BF4B8A&logo=githubsponsors&style=flat&logo=appveyor=Sponsor%20on%20Github"></img></a>
+<a href="https://patreon.com/julianprieber"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Djulianprieber%26type%3Dpatrons&style=flat&logo=appveyor"></img></a>
+</p>
+
+<p align="center">
+  <a href="https://hub.docker.com/r/julianprieber/littlelink-custom"><img src="https://i.imgur.com/u9W2tg1.png" alt="Docker Hub" width="280" ></a>
+</p>
+
+<a name="1"></a>
+## About
+
+The official docker version of [LittleLink Custom](https://github.com/JulianPrieber/littlelink-custom). This docker image is a simple to set up solution, containing everything you need to run LittleLink Custom.
+
+This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux distribution designed to be small, simple and secure. The web server is running [Apache2](https://www.apache.org/), a free and open-source cross-platform web server software. The docker comes with [PHP 8.0](https://www.php.net/releases/8.0/en.php) for high compatibility and performance.
+
+#### Using the docker is as simple as pulling and deploying.
+
+<br>
+
+<a name="2"></a>
+## About LittleLink Custom
+
+<p align="center">
+<img width="450" src="https://i.imgur.com/mtP2K3K.png">
+</p>
+
+<p align="center">
+<strong>LittleLink Custom is a highly customizable link sharing platform with an intuitive, easy to use user interface.</strong>
+    
+<p align="center">LittleLink Custom allows you to create a personal profile page. Many social media platforms only allow for one link. With this, you can have all the links you want clickable on one site. Set up your personal site on your own server in a few clicks.</p>
+</p>
+
+<br>
+
+<p align="center">
+<strong>Learn more about LittleLink Custom here:</strong>
+</p>
+
+<br>
+
+<p align="center">
+  <a href="https://littlelink-custom.com"><img src="https://i.imgur.com/c1PYOs6.png" alt="About" width="310" ></a>
+</p>
+
+<br>
+
+<a name="3"></a>
+## Pull
+
+`docker pull julianprieber/littlelink-custom`
+
+<br>
+
+<a name="4"></a>
+## Deployment
+
+You may change port *80*, *443* to your preferred values.  
+
+Both HTTP and HTTPS are supported and exposed by default.
+
+### Optional environment variables
 
 - `SERVER_ADMIN` (an email, defaults to `you@example.com`)
 - `HTTP_SERVER_NAME` (a [server name](https://httpd.apache.org/docs/2.4/fr/mod/core.html#servername), defaults to `www.example.com`)
@@ -11,15 +86,7 @@ Based on Alpine Linux and running Apache2 with PHP 8.
 - `TZ` (a [timezone](https://www.php.net/manual/timezones.php), defaults to `UTC`)
 - `PHP_MEMORY_LIMIT` (a [memory-limit](https://www.php.net/manual/ini.core.php#ini.memory-limit), defaults to `256M`)
 
-### Pull
-
-`docker pull julianprieber/littlelink-custom`
-
-### Deployment
-
-Change port *80*, *443* to your preferred values.  
-
-Both HTTP and HTTPS are supported and exposed by default.
+<br>
 
 #### Deploy
 
@@ -31,6 +98,8 @@ docker run --detach \
     --restart unless-stopped \
     julianprieber/littlelink-custom
 </pre>
+
+<br>
 
 #### Custom deployment
 
@@ -49,8 +118,6 @@ docker run --detach \
     julianprieber/littlelink-custom
 </pre>
 
-See [LittleLink Custom](https://github.com/JulianPrieber/littlelink-custom)
-
 <br>
 <br>
 
@@ -58,14 +125,18 @@ See [LittleLink Custom](https://github.com/JulianPrieber/littlelink-custom)
 
 <br>
 
-### Build
+<a name="5"></a>
+## Build
 
-Download this GitHub repository as well as the latest release of LittleLink Custom from [here](https://github.com/JulianPrieber/littlelink-custom/releases/latest/download/littlelink-custom.zip).
-Place the downloaded release files directly into the littlelink-custom folder from this repository.
+**If you wish to build or modify your own docker version of LittleLink Custom, you can do so with the instructions below:**
+
+- Download this GitHub repository as well as the latest release of LittleLink Custom from [here](https://github.com/JulianPrieber/littlelink-custom/releases/latest/download/littlelink-custom.zip).
+- Place the downloaded release files directly into the littlelink-custom folder from this repository.
 
 From the docker directory, run the command:
 <pre>
 docker build -t littlelink-custom .
 </pre>
 
-
+<br>
+<br>
