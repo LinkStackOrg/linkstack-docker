@@ -12,6 +12,9 @@
   <a href="#5">Build</a>
 </p><br>
 
+<p align="center">
+  <strong><a href="https://demo.littlelink-custom.com/">Live Demo</a></strong>
+</p>
 
 <p align="center">
 <a href="https://github.com/JulianPrieber/llc-docker/stargazers"><img src="https://img.shields.io/github/stars/julianprieber/llc-docker?logo=github&style=flat&logo=appveyor&label=star%20this%20project"></img></a>
@@ -28,6 +31,8 @@
 ## About
 
 The official docker version of [LittleLink Custom](https://github.com/JulianPrieber/littlelink-custom). This docker image is a simple to set up solution, containing everything you need to run LittleLink Custom.
+
+The docker version of LittleLink Custom retains all the features and customization options from the [original version](https://github.com/JulianPrieber/littlelink-custom).
 
 This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux distribution designed to be small, simple and secure. The web server is running [Apache2](https://www.apache.org/), a free and open-source cross-platform web server software. The docker comes with [PHP 8.0](https://www.php.net/releases/8.0/en.php) for high compatibility and performance.
 
