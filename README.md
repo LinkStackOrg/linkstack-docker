@@ -9,7 +9,8 @@
   <a href="#2">About LittleLink Custom</a> •
   <a href="#3">Pull</a> •
   <a href="#4">Deployment</a> •
-  <a href="#5">Build</a>
+  <a href="#5">Updating</a> •
+  <a href="#6">Build</a>
 </p><br>
 
 <p align="center">
@@ -56,7 +57,7 @@ This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux di
 <br>
 
 <p align="center">
-<strong>Learn more about LittleLink Custom here:</strong>
+<strong>Learn more about LittleLink Custom, and all the features here:</strong>
 </p>
 
 <br>
@@ -123,13 +124,45 @@ docker run --detach \
 </pre>
 
 <br>
+
+
+#### You can now log in to the Admin Panel, on your defined ports, with the credentials:
+-   **email:** `admin@admin.com`
+-   **password:** `12345678`
+
+<br>	
+
+### Optional configuration:
+Optionally, you can change the app name in your ".env" file in the root directory of your LittleLink Custom installation. At the moment this is set to
+APP_NAME="LittleLink Custom" you can change "LittleLink Custom" to what ever you like. This setting defines the page title and welcome message.
+
+For more configuration options, refer to the [documentation](https://littlelink-custom.com/docs/d/configuration-getting-started/).
+
+<br>
+
+<a name="5"></a>
+## Updating
+
+When a **new version** is released, you will get an update notification on your Admin Panel.
+
+### Automatic one click Updater
+This updater allows you to update your installation with just one click.
+
+<br>	
+
+**How to use the Automatic Updater:**
+
+- To update your instance, click on the update notification on your Admin Panel.
+
+- Click on “Update automatically” and the updater will take care of the rest.
+
 <br>
 
 ---
 
 <br>
 
-<a name="5"></a>
+<a name="6"></a>
 ## Build
 
 **If you wish to build or modify your own docker version of LittleLink Custom, you can do so with the instructions below:**
