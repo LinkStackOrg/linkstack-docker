@@ -1,5 +1,4 @@
 <h1 align="center">
-  <br>
   <a href="https://hub.docker.com/r/julianprieber/littlelink-custom"><img src="https://i.imgur.com/5o0w0jk.png" alt="LittleLink Custom"></a>
 </h1>
 
