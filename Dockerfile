@@ -15,8 +15,10 @@ RUN apk --no-cache --update \
     php8-ctype \
     php8-curl \
     php8-dom \
+    php8-fileinfo \
     php8-gd \
     php8-iconv \
+    php8-json \
     php8-mbstring \
     php8-mysqli \
     php8-mysqlnd \
