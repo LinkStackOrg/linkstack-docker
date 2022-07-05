@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://hub.docker.com/r/julianprieber/littlelink-custom"><img src="https://i.imgur.com/5o0w0jk.png" alt="LittleLink Custom"></a>
+  <a href="https://littlelink-custom.com/docker"><img src="https://i.imgur.com/5o0w0jk.png" alt="LittleLink Custom"></a>
 </h1>
 
 <h3 align="center">Pull, deploy, enjoy!</h3><br>
@@ -64,7 +64,7 @@ This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux di
 <br>
 
 <p align="center">
-  <a href="https://littlelink-custom.com"><img src="https://i.imgur.com/c1PYOs6.png" alt="About" width="310" ></a>
+  <a href="https://github.com/JulianPrieber/littlelink-custom"><img src="https://i.imgur.com/c1PYOs6.png" alt="About" width="310" ></a>
 </p>
 
 <br>
