@@ -9,6 +9,7 @@ HTTPS_SERVER_NAME="${HTTPS_SERVER_NAME:-www.example.com}"
 LOG_LEVEL="${LOG_LEVEL:-info}"
 TZ="${TZ:-UTC}"
 PHP_MEMORY_LIMIT="${PHP_MEMORY_LIMIT:-256M}"
+UPLOAD_MAX_FILESIZE="${UPLOAD_MAX_FILESIZE:-8M}"
 
 echo 'Updating configurations'
 
@@ -40,6 +41,7 @@ sed -i 's/#LoadModule\ expires_module/LoadModule\ expires_module/' /etc/apache2/
 
 # Modify php memory limit and timezone
 sed -i "s/memory_limit = .*/memory_limit = ${PHP_MEMORY_LIMIT}/" /etc/php8/php.ini
+sed -i "s/upload_max_filesize = .*/upload_max_filesize = ${UPLOAD_MAX_FILESIZE}/" /etc/php8/php.ini
 sed -i "s#^;date.timezone =\$#date.timezone = \"${TZ}\"#" /etc/php8/php.ini
 
 echo 'Running Apache'
