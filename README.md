@@ -91,6 +91,7 @@ Both HTTP and HTTPS are supported and exposed by default.
 - `LOG_LEVEL` (the [log level](https://httpd.apache.org/docs/2.4/fr/mod/core.html#loglevel), defaults to `info`)
 - `TZ` (the [timezone](https://www.php.net/manual/timezones.php), defaults to `UTC`)
 - `PHP_MEMORY_LIMIT` (the [memory-limit](https://www.php.net/manual/ini.core.php#ini.memory-limit), defaults to `256M`)
+- `UPLOAD_MAX_FILESIZE` (the [memory-limit](https://www.php.net/manual/en/ini.core.php#ini.upload-max-filesize), defaults to `8M`)
 
 <br>
 
@@ -118,6 +119,7 @@ docker run --detach \
     --env SERVER_ADMIN="admin@example.xyz" \
     --env TZ="Europe/Berlin" \
     --env PHP_MEMORY_LIMIT="512M" \
+    --env UPLOAD_MAX_FILESIZE="16M" \
     --publish 80:80 \
     --publish 443:443 \
     --restart unless-stopped \
