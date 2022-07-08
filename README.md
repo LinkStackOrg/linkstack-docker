@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://littlelink-custom.com/docker"><img src="https://i.imgur.com/5o0w0jk.png" alt="LittleLink Custom"></a>
+  <a href="https://littlelink-custom.com/docker"><img width="900" src="https://i.imgur.com/5o0w0jk.png" alt="LittleLink Custom"></a>
 </h1>
 
 <h3 align="center">Pull, deploy, enjoy!</h3><br>
@@ -171,7 +171,7 @@ This updater allows you to update your installation with just one click.
 **If you wish to build or modify your own docker version of LittleLink Custom, you can do so with the instructions below:**
 
 - Download this GitHub repository as well as the latest release of LittleLink Custom from [here](https://github.com/JulianPrieber/littlelink-custom/releases/latest/download/littlelink-custom.zip).
-- Place the downloaded release files directly into the littlelink-custom folder from this repository.
+- Place the downloaded release files directly into the littlelink-custom folder from [this repository](https://github.com/JulianPrieber/llc-docker/archive/refs/heads/main.zip).
 
 From the docker directory, run the command:
 <pre>
