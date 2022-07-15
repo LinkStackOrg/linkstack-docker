@@ -86,8 +86,8 @@ Both HTTP and HTTPS are supported and exposed by default.
 ### Optional environment variables
 
 - `SERVER_ADMIN` (the email, defaults to `you@example.com`)
-- `HTTP_SERVER_NAME` (the [server name](https://httpd.apache.org/docs/2.4/fr/mod/core.html#servername), defaults to `www.example.com`)
-- `HTTPS_SERVER_NAME` (the [server name](https://httpd.apache.org/docs/2.4/fr/mod/core.html#servername), defaults to `www.example.com`)
+- `HTTP_SERVER_NAME` (the [server name](https://httpd.apache.org/docs/2.4/fr/mod/core.html#servername), defaults to `localhost`)
+- `HTTPS_SERVER_NAME` (the [server name](https://httpd.apache.org/docs/2.4/fr/mod/core.html#servername), defaults to `localhost`)
 - `LOG_LEVEL` (the [log level](https://httpd.apache.org/docs/2.4/fr/mod/core.html#loglevel), defaults to `info`)
 - `TZ` (the [timezone](https://www.php.net/manual/timezones.php), defaults to `UTC`)
 - `PHP_MEMORY_LIMIT` (the [memory-limit](https://www.php.net/manual/ini.core.php#ini.memory-limit), defaults to `256M`)
