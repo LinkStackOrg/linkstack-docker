@@ -44,6 +44,8 @@ sed -i "s/memory_limit = .*/memory_limit = ${PHP_MEMORY_LIMIT}/" /etc/php8/php.i
 sed -i "s/upload_max_filesize = .*/upload_max_filesize = ${UPLOAD_MAX_FILESIZE}/" /etc/php8/php.ini
 sed -i "s#^;date.timezone =\$#date.timezone = \"${TZ}\"#" /etc/php8/php.ini
 
+echo "is_llc_docker = true" >> /etc/php8/php.ini
+
 echo 'Running Apache'
 
 httpd -D FOREGROUND
