@@ -8,9 +8,10 @@
   <a href="#1">About</a> •
   <a href="#2">About LittleLink Custom</a> •
   <a href="#3">Pull</a> •
-  <a href="#4">Deployment</a> •
-  <a href="#5">Updating</a> •
-  <a href="#6">Build</a>
+  <a href="#4">Supported Architectures</a> •
+  <a href="#5">Deployment</a> •
+  <a href="#6">Updating</a> •
+  <a href="#7">Build</a>
 </p><br>
 
 <p align="center">
@@ -77,6 +78,16 @@ This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux di
 <br>
 
 <a name="4"></a>
+## Supported Architectures
+
+- [`linux/amd64`](https://hub.docker.com/r/julianprieber/littlelink-custom/tags)
+- [`linux/arm/v6`](https://hub.docker.com/r/julianprieber/littlelink-custom/tags)
+- [`linux/arm/v7`](https://hub.docker.com/r/julianprieber/littlelink-custom/tags)
+- [`linux/arm64`](https://hub.docker.com/r/julianprieber/littlelink-custom/tags)
+
+<br>
+
+<a name="5"></a>
 ## Deployment
 
 You may change port *80*, *443* to your preferred values.  
@@ -143,7 +154,7 @@ For more configuration options, refer to the [documentation](https://littlelink-
 
 <br>
 
-<a name="5"></a>
+<a name="6"></a>
 ## Updating
 
 When a **new version** is released, you will get an update notification on your Admin Panel.
@@ -165,7 +176,7 @@ This updater allows you to update your installation with just one click.
 
 <br>
 
-<a name="6"></a>
+<a name="7"></a>
 ## Build
 
 **If you wish to build or modify your own docker version of LittleLink Custom, you can do so with the instructions below:**
