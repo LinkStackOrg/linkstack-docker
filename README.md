@@ -211,7 +211,8 @@ server {
   server_name   your.domain.name;
 
   location / {
-    proxy_pass                          http://192.168.XXX.XXX;
+    # Replace with the IP address and port number of your Docker container.
+    proxy_pass                          http://127.0.0.1:80;
     proxy_set_header Host               $host;
     proxy_set_header X-Real-IP          $remote_addr;
 
