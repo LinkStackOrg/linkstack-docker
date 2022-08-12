@@ -191,6 +191,11 @@ docker build -t littlelink-custom .
 <a name="8"></a>
 ## Reverse Proxy
 
+|                        Incorrect                      |
+| ----------------------------------------------------- |
+|<img width="500" src="https://i.imgur.com/3ellGki.png">|
+|              Invalid header configuration             |
+
 ### NGINX:
 
 **Below is an example NGINX setup for a reverse proxy.**
