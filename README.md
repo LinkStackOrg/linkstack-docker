@@ -191,10 +191,10 @@ docker build -t littlelink-custom .
 <a name="8"></a>
 ## Reverse Proxy
 
-|                   ⚠️ Incorrect ⚠️                    |
-| ----------------------------------------------------- |
-|<img width="500" src="https://i.imgur.com/3ellGki.png">|
-|              Invalid header configuration             |
+|                   ⚠️ Incorrect ⚠️                    |                    ✅ Correct ✅                     |  
+| ----------------------------------------------------- | ----------------------------------------------------- |
+|<img width="500" src="https://i.imgur.com/3ellGki.png">|<img width="500" src="https://i.imgur.com/EfKRGSJ.png">|
+|              Invalid header configuration             |               Valid header configuration              |
 
 <br>
 
