@@ -193,7 +193,7 @@ docker build -t littlelink-custom .
 
 |                   ⚠️ Incorrect ⚠️                    |                    ✅ Correct ✅                     |  
 | ----------------------------------------------------- | ----------------------------------------------------- |
-|<img width="500" src="https://i.imgur.com/3ellGki.png">|<img width="500" src="https://i.imgur.com/EfKRGSJ.png">|
+|<a href="https://github.com/JulianPrieber/llc-docker#8"><img width="500" src="https://i.imgur.com/3ellGki.png"></a>|<a href="https://github.com/JulianPrieber/llc-docker#8"><img width="500" src="https://i.imgur.com/EfKRGSJ.png"></a>|
 |              Invalid header configuration             |               Valid header configuration              |
 
 <br>
