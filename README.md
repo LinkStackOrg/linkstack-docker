@@ -191,6 +191,15 @@ docker build -t littlelink-custom .
 <a name="8"></a>
 ## Reverse Proxy
 
+<br>
+
+|                   ❌ Invalid setup ❌                    |
+| ----------------------------------------------------- |
+|<a href="https://github.com/JulianPrieber/llc-docker#8"><img src="https://i.imgur.com/QSCDU6w.png"></a>|
+|              Invalid header configuration             |
+
+<br>
+
 |                   ⚠️ Incorrect ⚠️                    |                    ✅ Correct ✅                     |  
 | ----------------------------------------------------- | ----------------------------------------------------- |
 |<a href="https://github.com/JulianPrieber/llc-docker#8"><img width="500" src="https://i.imgur.com/3ellGki.png"></a>|<a href="https://github.com/JulianPrieber/llc-docker#8"><img width="500" src="https://i.imgur.com/EfKRGSJ.png"></a>|
