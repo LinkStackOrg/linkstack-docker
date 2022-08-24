@@ -196,7 +196,6 @@ docker build -t littlelink-custom .
 |                   ❌ Invalid setup ❌                    |
 | ----------------------------------------------------- |
 |<a href="https://github.com/JulianPrieber/llc-docker#8"><img src="https://i.imgur.com/QSCDU6w.png"></a>|
-|              Invalid header configuration             |
 
 <br>
 
