@@ -12,7 +12,8 @@
   <a href="#5">Deployment</a> •
   <a href="#6">Updating</a> •
   <a href="#7">Build</a> •
-  <a href="#8">Reverse Proxy</a>
+  <a href="#8">Persistent storage</a> •
+  <a href="#9">Reverse Proxy</a>
 </p><br>
 
 <p align="center">
@@ -109,12 +110,23 @@ Both HTTP and HTTPS are supported and exposed by default.
 
 #### Deploy
 
+<a href="#deploy"><img width="350" src="https://img.shields.io/badge/-We%20recommend%20setting%20up%20persistent%20storage-yellow"></a><br>
+<a href="#8"><i>Read more about persistent storage</i></a>
+
+<br>
+
+**Create a new volume:**
+<pre>docker volume create llc</pre>
+
+<br>
+
 <pre>
 docker run --detach \
     --name littlelink-custom \
     --publish 80:80 \
     --publish 443:443 \
     --restart unless-stopped \
+    --mount source=llc,target=/htdocs \
     julianprieber/littlelink-custom
 </pre>
 
@@ -135,6 +147,7 @@ docker run --detach \
     --publish 80:80 \
     --publish 443:443 \
     --restart unless-stopped \
+    --mount source=llc,target=/htdocs \
     julianprieber/littlelink-custom
 </pre>
 
@@ -189,6 +202,40 @@ docker build -t littlelink-custom .
 <br>
 
 <a name="8"></a>
+## Persistent storage
+
+Persistent storage for docker containers is storage that is **not** lost when the container is stopped or removed.
+
+This is advantageous since it means that data may be saved even if the container is removed. This is especially crucial when dealing with data that must be retained throughout restarts, such as a database.
+
+
+All files important to run LittleLink Custom are stored in the "htdocs" folder found in the root directory of your docker container.
+
+We recommend mounting that entire folder to an external volume.
+
+<br>
+
+**However, some user may prefer to preserve only individual files.** <br>
+_Expand the details section below to read more about this:_
+
+<details>
+If you wish to save only selective files, you may save the following files and folders:
+
+```
+/htdocs/.env
+/htdocs/database/database.sqlite
+/htdocs/config/advanced-config.php
+/htdocs/littlelink/images/avatar.png
+/htdocs/themes (folder)
+/htdocs/img (folder)
+```
+
+**This might change with future releases.**
+</details>
+
+<br>
+
+<a name="9"></a>
 ## Reverse Proxy
 
 <br>
