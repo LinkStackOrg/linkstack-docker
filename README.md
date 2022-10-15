@@ -154,6 +154,7 @@ docker run --detach \
 <br>
 
 #### Docker Compose
+Example config.
 
 <pre>
 version: "3.8"
@@ -178,6 +179,7 @@ services:
     ports:
       - '8088:80'
       - '8090:443'
+    restart: unless-stopped
     networks:
       - 'mariadb'
       - 'misc'
