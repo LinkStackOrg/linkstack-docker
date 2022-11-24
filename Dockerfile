@@ -1,4 +1,4 @@
-FROM alpine:3.17.0
+FROM alpine:3.16
 LABEL maintainer="JulianPrieber"
 LABEL description="LittleLink Custom Docker"
 
