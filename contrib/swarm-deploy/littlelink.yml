@@ -64,7 +64,7 @@ services:
 
         - "traefik.enable=true"
 
-        - "traefik.http.routers.llc-frontend-prod.rule=Host(`links.<YOUR_DOMAIN>`)"
+        - "traefik.http.routers.llc-frontend-prod.rule=Host(`<YOUR_DOMAIN>`)"
         - "traefik.http.routers.llc-frontend-prod.entrypoints=http"
         - "traefik.http.services.llc-frontend-prod.loadbalancer.server.port=80"
         - "traefik.http.routers.llc-frontend-prod.service=llc-frontend-prod"
