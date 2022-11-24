@@ -55,9 +55,9 @@ services:
           cpus: "0.5"
           memory: 512M
 
-      placement:
-        constraints:
-          - node.labels.hetzner_location == nbg1
+      # placement:
+      #   constraints:
+      #     - node.labels.hetzner_location == nbg1
 
       labels:
         - "traefik.docker.network=traefik-public"
