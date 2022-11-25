@@ -28,6 +28,7 @@ RUN apk --no-cache --update \
     php8-pdo_sqlite \
     php8-phar \
     php8-session \
+    tzdata \
     php8-xml \
     php8-tokenizer \
     php8-zip \
@@ -36,12 +37,23 @@ RUN apk --no-cache --update \
 COPY littlelink-custom /htdocs
 RUN chown -R apache:apache /htdocs
 RUN find /htdocs -type d -print0 | xargs -0 chmod 0755
-RUN find /htdocs -type f -print0 | xargs -0 chmod 0644 
+RUN find /htdocs -type f -print0 | xargs -0 chmod 0644
 
 EXPOSE 80 443
 
-ADD docker-entrypoint.sh /
+COPY --chmod=755 docker-entrypoint.sh /usr/local/bin/
 
-HEALTHCHECK CMD wget -q --no-cache --spider localhost
+HEALTHCHECK CMD curl -f http://localhost -A "HealthCheck" || exit 1
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+# Forward Apache access and error logs to Docker's log collector.
+# Optional last line adds extra verbosity with for example:
+# [ssl:info] [pid 33] [client 10.0.5.8:45542] AH01964: Connection to child 2 established (server your.domain:443)
+RUN ln -sf /dev/stdout /var/www/logs/access.log \
+ && ln -sf /dev/stderr /var/www/logs/error.log \
+ && ln -sf /dev/stderr /var/www/logs/ssl-access.log
+# && ln -sf /dev/stderr /var/www/logs/ssl-error.log
+
+# Set console entry path
+WORKDIR /htdocs/littlelink
+
+CMD ["docker-entrypoint.sh"]
