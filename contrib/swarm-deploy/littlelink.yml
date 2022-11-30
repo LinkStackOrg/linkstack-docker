@@ -1,0 +1,94 @@
+version: "3.8"
+
+services:
+  llc_custom:
+    entrypoint: "/bin/sh"
+    command:
+      - -c
+      - |
+        cp -n -r /htdocs/database/ /data/database
+        cp -n /htdocs/.env /data/.env
+        cp -n -r /htdocs/littlelink/images /data/images
+        cp -n -r /htdocs/themes /data/themes
+        cp -n -r /htdocs/img /data/img
+
+        chown -R apache:apache /data
+
+        rm -rf /htdocs/database/
+        rm /htdocs/.env
+        rm -rf /htdocs/littlelink/images
+        rm -rf /htdocs/themes
+        rm -rf /htdocs/img
+
+        ln -s /data/database /htdocs/database
+        ln -s /data/.env /htdocs/.env
+        ln -s /data/images /htdocs/littlelink/images
+        ln -s /data/themes /htdocs/themes
+        ln -s /data/img/ /htdocs/img
+
+        cd /htdocs
+        php artisan migrate --force
+
+        exec /docker-entrypoint.sh server
+    image: "julianprieber/littlelink-custom:latest"
+    environment:
+      TZ: "Europe/Berlin"
+      HTTP_SERVER_NAME: "<YOUR_DOMAIN>"
+      HTTPS_SERVER_NAME: "<YOUR_DOMAIN>"
+      LOG_LEVEL: "info"
+      PHP_MEMORY_LIMIT: "256M"
+      UPLOAD_MAX_FILESIZE: "8M"
+      DB_CONNECTION: sqlite
+    configs:
+      - source: llc_advanced_config
+        target: /htdocs/config/advanced-config.php
+    volumes:
+      - llc_data:/data
+    networks:
+      - traefik-public
+    deploy:
+      mode: replicated
+      replicas: 1
+
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+
+      # placement:
+      #   constraints:
+      #     - node.labels.hetzner_location == nbg1
+
+      labels:
+        - "traefik.docker.network=traefik-public"
+
+        - "traefik.enable=true"
+
+        - "traefik.http.routers.llc-frontend-prod.rule=Host(`<YOUR_DOMAIN>`)"
+        - "traefik.http.routers.llc-frontend-prod.entrypoints=http"
+        # we have to use https here
+        # for this to work with the self signed cert, we need
+        # to use --serverstransport.insecureskipverify=true
+        # when starting traefik
+        - "traefik.http.services.llc-frontend-prod.loadbalancer.server.port=443"
+        - "traefik.http.services.llc-frontend-prod.loadbalancer.server.scheme=https"
+        - "traefik.http.routers.llc-frontend-prod.service=llc-frontend-prod"
+        - "traefik.http.routers.llc-frontend-prod.middlewares=llc-https-header"
+
+        - "traefik.http.middlewares.llc-https-header.headers.customrequestheaders.X-Forwarded-Proto=https"
+        - "traefik.constraint-label=traefik-public"
+
+networks:
+  traefik-public:
+    external: true
+
+configs:
+  llc_advanced_config:
+    file: ./configs/advanced-config.php
+
+volumes:
+  llc_data:
+    # driver: hetzner-volume
+    # driver_opts:
+    #   size: "10"
+    #   fstype: ext4
