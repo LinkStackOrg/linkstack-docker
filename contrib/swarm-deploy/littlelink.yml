@@ -19,6 +19,11 @@ services:
         rm -rf /htdocs/littlelink/images
         rm -rf /htdocs/themes
         rm -rf /htdocs/img
+        
+        # uncomment this after first start
+        # to prevent the installing dialog coming up
+        # if the container is recreated
+        # rm /htdocs/INSTALLING
 
         ln -s /data/database /htdocs/database
         ln -s /data/.env /htdocs/.env
