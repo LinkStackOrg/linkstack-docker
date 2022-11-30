@@ -66,12 +66,16 @@ services:
 
         - "traefik.http.routers.llc-frontend-prod.rule=Host(`<YOUR_DOMAIN>`)"
         - "traefik.http.routers.llc-frontend-prod.entrypoints=http"
-        - "traefik.http.services.llc-frontend-prod.loadbalancer.server.port=80"
+        # we have to use https here
+        # for this to work with the self signed cert, we need
+        # to use --serverstransport.insecureskipverify=true
+        # when starting traefik
+        - "traefik.http.services.llc-frontend-prod.loadbalancer.server.port=443"
+        - "traefik.http.services.llc-frontend-prod.loadbalancer.server.scheme=https"
         - "traefik.http.routers.llc-frontend-prod.service=llc-frontend-prod"
         - "traefik.http.routers.llc-frontend-prod.middlewares=llc-https-header"
 
         - "traefik.http.middlewares.llc-https-header.headers.customrequestheaders.X-Forwarded-Proto=https"
-        - "traefik.http.middlewares.llc-https-header.headers.contentSecurityPolicy=upgrade-insecure-requests"
         - "traefik.constraint-label=traefik-public"
 
 networks:
