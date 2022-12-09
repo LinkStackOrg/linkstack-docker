@@ -1,6 +1,8 @@
-FROM alpine:3.17.0
+FROM alpine:3.16.0
 LABEL maintainer="JulianPrieber"
 LABEL description="LittleLink Custom Docker"
+
+EXPOSE 80 443
 
 # Setup apache and php
 RUN apk --no-cache --update \
@@ -28,10 +30,10 @@ RUN apk --no-cache --update \
     php8-pdo_sqlite \
     php8-phar \
     php8-session \
-    tzdata \
     php8-xml \
     php8-tokenizer \
     php8-zip \
+    tzdata \
     && mkdir /htdocs
 
 COPY littlelink-custom /htdocs
@@ -39,9 +41,7 @@ RUN chown -R apache:apache /htdocs
 RUN find /htdocs -type d -print0 | xargs -0 chmod 0755
 RUN find /htdocs -type f -print0 | xargs -0 chmod 0644
 
-EXPOSE 80 443
-
-COPY --chmod=755 docker-entrypoint.sh /usr/local/bin/
+COPY --chmod=0755 docker-entrypoint.sh /usr/local/bin/
 
 HEALTHCHECK CMD curl -f http://localhost -A "HealthCheck" || exit 1
 
