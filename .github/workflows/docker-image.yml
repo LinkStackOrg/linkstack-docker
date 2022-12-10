@@ -14,13 +14,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Docker Hub Login
+    - name: 'Docker Hub: Login'
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run:
-        docker login -u DOCKER_USER -p DOCKER_PASSWORD
-    - name: Build the Image
+        docker login -u DOCKER_USER --password-stdin DOCKER_PASSWORD
+    - name: 'Build Image'
       run: docker build . --file Dockerfile --tag jscottelblein/llc-docker:latest
-    - name: Push to Docker Hub
+    - name: 'Docker Hub: Push'
       run: docker push ${{ secrets.DOCKER_USER }}/llc-docker
