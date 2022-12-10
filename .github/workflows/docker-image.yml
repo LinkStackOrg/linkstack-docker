@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Docker Hub Login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run:
+        docker login -u DOCKER_USER -p DOCKER_PASSWORD
+    - name: Build the Image
+      run: docker build . --file Dockerfile --tag jscottelblein/llc-docker:latest
+    - name: Push to Docker Hub
+      run: docker push ${{ secrets.DOCKER_USER }}/llc-docker
