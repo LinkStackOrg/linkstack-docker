@@ -1,6 +1,8 @@
-FROM alpine:3.16
+FROM alpine:3.16.0
 LABEL maintainer="JulianPrieber"
 LABEL description="LittleLink Custom Docker"
+
+EXPOSE 80 443
 
 # Setup apache and php
 RUN apk --no-cache --update \
@@ -31,17 +33,27 @@ RUN apk --no-cache --update \
     php8-xml \
     php8-tokenizer \
     php8-zip \
+    tzdata \
     && mkdir /htdocs
 
 COPY littlelink-custom /htdocs
 RUN chown -R apache:apache /htdocs
 RUN find /htdocs -type d -print0 | xargs -0 chmod 0755
-RUN find /htdocs -type f -print0 | xargs -0 chmod 0644 
+RUN find /htdocs -type f -print0 | xargs -0 chmod 0644
 
-EXPOSE 80 443
+COPY --chmod=0755 docker-entrypoint.sh /usr/local/bin/
 
-ADD docker-entrypoint.sh /
+HEALTHCHECK CMD curl -f http://localhost -A "HealthCheck" || exit 1
 
-HEALTHCHECK CMD wget -q --no-cache --spider localhost
+# Forward Apache access and error logs to Docker's log collector.
+# Optional last line adds extra verbosity with for example:
+# [ssl:info] [pid 33] [client 10.0.5.8:45542] AH01964: Connection to child 2 established (server your.domain:443)
+RUN ln -sf /dev/stdout /var/www/logs/access.log \
+ && ln -sf /dev/stderr /var/www/logs/error.log \
+ && ln -sf /dev/stderr /var/www/logs/ssl-access.log
+# && ln -sf /dev/stderr /var/www/logs/ssl-error.log
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+# Set console entry path
+WORKDIR /htdocs/littlelink
+
+CMD ["docker-entrypoint.sh"]
