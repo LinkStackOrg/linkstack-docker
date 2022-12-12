@@ -20,8 +20,15 @@ UPLOAD_MAX_FILESIZE="${UPLOAD_MAX_FILESIZE:-8M}"
 #          Useful for comparing (and fixing) changes, if necessary.
 DEBUG="TRUE"
 
+# Read Current LLC Version
+# When version.json has CR/LF, it fx up, so have to add tr to remove the line endings.
+v="$(cat /htdocs/version.json | tr -d '\r\n')"
+
+# Calc length of whitespace we need, based on version length.
+vlen="$((27-${#v}))"
+
 echo '+ ------------------------------------------------------------------ +'
-echo '|                        LITTLELINK CUSTOM                           |'
+printf '|                      LITTLELINK CUSTOM v%s%*s|\n' "${v}" "$vlen" | tr ' ' " "
 
 # + ---------------- + #
 # | -- HTTPD.CONF -- | #
