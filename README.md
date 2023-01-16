@@ -166,8 +166,8 @@ services:
     image: 'julianprieber/littlelink-custom:latest'
     environment:
       TZ: 'Europe/Berlin'
-      SERVER_ADMIN: youremail@gmail.com'
-      HTTP_SERVER_NAME: 'yourdomain.com''
+      SERVER_ADMIN: 'youremail@gmail.com'
+      HTTP_SERVER_NAME: 'yourdomain.com'
       HTTPS_SERVER_NAME: 'yourdomain.com'
       LOG_LEVEL: 'info'
       PHP_MEMORY_LIMIT: '256M'
