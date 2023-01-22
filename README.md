@@ -196,12 +196,6 @@ networks:
     name: 'db-redis'
 </pre>
 
-<br>
-
-#### You can now log in to the Admin Panel, on your defined ports, with the credentials:
--   **email:** `admin@admin.com`
--   **password:** `12345678`
-
 <br>	
 
 ### Optional configuration:
@@ -241,7 +235,7 @@ This updater allows you to update your installation with just one click.
 From the docker directory, run the command:
 <pre>
 docker build -t littlelink-custom .
-</pre>
+</pre>You can now set up your application on your defined ports.
 
 <br>
 
