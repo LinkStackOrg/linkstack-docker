@@ -9,30 +9,30 @@ RUN apk --no-cache --update \
     add apache2 \
     apache2-ssl \
     curl \
-    php8-apache2 \
-    php8-bcmath \
-    php8-bz2 \
-    php8-calendar \
-    php8-common \
-    php8-ctype \
-    php8-curl \
-    php8-dom \
-    php8-fileinfo \
-    php8-gd \
-    php8-iconv \
-    php8-json \
-    php8-mbstring \
-    php8-mysqli \
-    php8-mysqlnd \
-    php8-openssl \
-    php8-pdo_mysql \
-    php8-pdo_pgsql \
-    php8-pdo_sqlite \
-    php8-phar \
-    php8-session \
-    php8-xml \
-    php8-tokenizer \
-    php8-zip \
+    php81-apache2 \
+    php81-bcmath \
+    php81-bz2 \
+    php81-calendar \
+    php81-common \
+    php81-ctype \
+    php81-curl \
+    php81-dom \
+    php81-fileinfo \
+    php81-gd \
+    php81-iconv \
+    php81-json \
+    php81-mbstring \
+    php81-mysqli \
+    php81-mysqlnd \
+    php81-openssl \
+    php81-pdo_mysql \
+    php81-pdo_pgsql \
+    php81-pdo_sqlite \
+    php81-phar \
+    php81-session \
+    php81-xml \
+    php81-tokenizer \
+    php81-zip \
     tzdata \
     && mkdir /htdocs
 
