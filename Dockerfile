@@ -33,6 +33,7 @@ RUN apk --no-cache --update \
     php81-xml \
     php81-tokenizer \
     php81-zip \
+    php81-xmlwriter \
     tzdata \
     && mkdir /htdocs
 
