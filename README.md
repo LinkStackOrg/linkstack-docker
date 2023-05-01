@@ -30,7 +30,7 @@
 <a href="https://hub.docker.com/r/linkstackorg/linkstack"><img src="https://img.shields.io/docker/stars/linkstackorg/linkstack?&style=flat&logo=appveyor&label=docker%20hub"></img></a>
 <a href="https://discord.linkstack.com"><img src="https://img.shields.io/discord/955765706111193118?color=4A55CC&label=Discord&logo=discord&style=flat&logo=appveyor"></img></a>
 <a href="https://github.com/sponsors/linkstackorg"><img src="https://img.shields.io/github/sponsors/linkstackorg?color=BF4B8A&logo=githubsponsors&style=flat&logo=appveyor=Sponsor%20on%20Github"></img></a>
-<a href="https://patreon.com/linkstackorg"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dlinkstackorg%26type%3Dpatrons&style=flat&logo=appveyor"></img></a>
+<a href="https://patreon.com/julianprieber"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Djulianprieber%26type%3Dpatrons&style=flat&logo=appveyor"></img></a>
 </p>
 
 <p align="center">
