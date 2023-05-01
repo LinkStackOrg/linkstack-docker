@@ -1,2 +1,2 @@
 #!/bin/bash
-docker stack deploy -c littlelink.yml littlelink
+docker stack deploy -c linkstack.yml linkstack

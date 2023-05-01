@@ -35,7 +35,7 @@ services:
         php artisan migrate --force
 
         exec /docker-entrypoint.sh server
-    image: "julianprieber/littlelink-custom:latest"
+    image: "julianprieber/linkstack:latest"
     environment:
       TZ: "Europe/Berlin"
       HTTP_SERVER_NAME: "<YOUR_DOMAIN>"

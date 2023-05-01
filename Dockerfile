@@ -1,6 +1,6 @@
 FROM alpine:3.17.2
 LABEL maintainer="JulianPrieber"
-LABEL description="LittleLink Custom Docker"
+LABEL description="LinkStack Docker"
 
 EXPOSE 80 443
 
@@ -37,7 +37,7 @@ RUN apk --no-cache --update \
     tzdata \
     && mkdir /htdocs
 
-COPY littlelink-custom /htdocs
+COPY linkstack /htdocs
 RUN chown -R apache:apache /htdocs
 RUN find /htdocs -type d -print0 | xargs -0 chmod 0755
 RUN find /htdocs -type f -print0 | xargs -0 chmod 0644

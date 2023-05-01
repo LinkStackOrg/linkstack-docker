@@ -16,7 +16,7 @@ PHP_MEMORY_LIMIT="${PHP_MEMORY_LIMIT:-256M}"
 UPLOAD_MAX_FILESIZE="${UPLOAD_MAX_FILESIZE:-8M}"
 
 # If TRUE, outputs pre and post-change config files, if a /debug folder has also been mounted.
-#          i.e. - '/opt/docker/configs/littlelink/debug:/debug:rw'
+#          i.e. - '/opt/docker/configs/linkstack/debug:/debug:rw'
 #          Useful for comparing (and fixing) changes, if necessary.
 DEBUG="TRUE"
 
@@ -28,7 +28,7 @@ v="$(cat /htdocs/version.json | tr -d '\r\n')"
 vlen="$((27-${#v}))"
 
 echo '+ ------------------------------------------------------------------ +'
-printf '|                      LITTLELINK CUSTOM v%s%*s|\n' "${v}" "$vlen" | tr ' ' " "
+printf '|                      LINKSTACK v%s%*s|\n' "${v}" "$vlen" | tr ' ' " "
 
 # + ---------------- + #
 # | -- HTTPD.CONF -- | #
