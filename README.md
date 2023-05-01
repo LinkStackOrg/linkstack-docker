@@ -1,8 +1,13 @@
-<h1 align="center">
-  <a href="https://linkstack.com/docker"><img width="900" src="https://i.imgur.com/5o0w0jk.png" alt="LinkStack"></a>
-</h1>
+<p align="center">
+  <img width="200px" src="https://linkstack.org/wp-content/uploads/2023/04/logo-animated.svg"><br>
+<picture>
+  <source media="(prefers-color-scheme: dark)" width="400px" srcset="https://i.imgur.com/d1mdtEw.png">
+  <img width="400px" src="https://i.imgur.com/pPMgaqF.png">
+</picture>
+</p>
 
-<h3 align="center">Pull, deploy, enjoy!</h3><br>
+<h3 align="center">Docker Edition</h3><br>
+<h4 align="center">Pull, deploy, enjoy!</h3><br>
 
 <p align="center">
   <a href="#1">About</a> •
@@ -17,7 +22,7 @@
 </p><br>
 
 <p align="center">
-  <strong><a href="https://demo.linkstack.com/">Live Demo</a></strong>
+  <strong><a href="https://linksta.cc">Live Demo</a></strong>
 </p>
 
 <p align="center">
