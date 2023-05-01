@@ -1,12 +1,12 @@
 <h1 align="center">
-  <a href="https://littlelink-custom.com/docker"><img width="900" src="https://i.imgur.com/5o0w0jk.png" alt="LittleLink Custom"></a>
+  <a href="https://linkstack.com/docker"><img width="900" src="https://i.imgur.com/5o0w0jk.png" alt="LinkStack"></a>
 </h1>
 
 <h3 align="center">Pull, deploy, enjoy!</h3><br>
 
 <p align="center">
   <a href="#1">About</a> •
-  <a href="#2">About LittleLink Custom</a> •
+  <a href="#2">About LinkStack</a> •
   <a href="#3">Pull</a> •
   <a href="#4">Supported Architectures</a> •
   <a href="#5">Deployment</a> •
@@ -17,27 +17,27 @@
 </p><br>
 
 <p align="center">
-  <strong><a href="https://demo.littlelink-custom.com/">Live Demo</a></strong>
+  <strong><a href="https://demo.linkstack.com/">Live Demo</a></strong>
 </p>
 
 <p align="center">
 <a href="https://github.com/JulianPrieber/llc-docker/stargazers"><img src="https://img.shields.io/github/stars/julianprieber/llc-docker?logo=github&style=flat&logo=appveyor&label=star%20this%20project"></img></a>
-<a href="https://hub.docker.com/r/julianprieber/littlelink-custom"><img src="https://img.shields.io/docker/stars/julianprieber/littlelink-custom?&style=flat&logo=appveyor&label=docker%20hub"></img></a>
-<a href="https://discord.littlelink-custom.com"><img src="https://img.shields.io/discord/955765706111193118?color=4A55CC&label=Discord&logo=discord&style=flat&logo=appveyor"></img></a>
+<a href="https://hub.docker.com/r/julianprieber/linkstack"><img src="https://img.shields.io/docker/stars/julianprieber/linkstack?&style=flat&logo=appveyor&label=docker%20hub"></img></a>
+<a href="https://discord.linkstack.com"><img src="https://img.shields.io/discord/955765706111193118?color=4A55CC&label=Discord&logo=discord&style=flat&logo=appveyor"></img></a>
 <a href="https://github.com/sponsors/julianprieber"><img src="https://img.shields.io/github/sponsors/JulianPrieber?color=BF4B8A&logo=githubsponsors&style=flat&logo=appveyor=Sponsor%20on%20Github"></img></a>
 <a href="https://patreon.com/julianprieber"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Djulianprieber%26type%3Dpatrons&style=flat&logo=appveyor"></img></a>
 </p>
 
 <p align="center">
-  <a href="https://hub.docker.com/r/julianprieber/littlelink-custom"><img src="https://i.imgur.com/u9W2tg1.png" alt="Docker Hub" width="280" ></a>
+  <a href="https://hub.docker.com/r/julianprieber/linkstack"><img src="https://i.imgur.com/u9W2tg1.png" alt="Docker Hub" width="280" ></a>
 </p>
 
 <a name="1"></a>
 ## About
 
-The official docker version of [LittleLink Custom](https://github.com/JulianPrieber/littlelink-custom). This docker image is a simple to set up solution, containing everything you need to run LittleLink Custom.
+The official docker version of [LinkStack](https://github.com/JulianPrieber/linkstack). This docker image is a simple to set up solution, containing everything you need to run LinkStack.
 
-The docker version of LittleLink Custom retains all the features and customization options of the [original version](https://github.com/JulianPrieber/littlelink-custom).
+The docker version of LinkStack retains all the features and customization options of the [original version](https://github.com/JulianPrieber/linkstack).
 
 This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux distribution designed to be small, simple and secure. The web server is running [Apache2](https://www.apache.org/), a free and open-source cross-platform web server software. The docker comes with [PHP 8.0](https://www.php.net/releases/8.0/en.php) for high compatibility and performance.
 
@@ -46,28 +46,28 @@ This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux di
 <br>
 
 <a name="2"></a>
-## About LittleLink Custom
+## About LinkStack
 
 <p align="center">
 <img width="450" src="https://i.imgur.com/mtP2K3K.png">
 </p>
 
 <p align="center">
-<strong>LittleLink Custom is a highly customizable link sharing platform with an intuitive, easy to use user interface.</strong>
+<strong>LinkStack is a highly customizable link sharing platform with an intuitive, easy to use user interface.</strong>
     
-<p align="center">LittleLink Custom allows you to create a personal profile page. Many social media platforms only allow for one link. With this, you can have all the links you want clickable on one site. Set up your personal site on your own server in a few clicks.</p>
+<p align="center">LinkStack allows you to create a personal profile page. Many social media platforms only allow for one link. With this, you can have all the links you want clickable on one site. Set up your personal site on your own server in a few clicks.</p>
 </p>
 
 <br>
 
 <p align="center">
-<strong>Learn more about LittleLink Custom, and all the features here:</strong>
+<strong>Learn more about LinkStack, and all the features here:</strong>
 </p>
 
 <br>
 
 <p align="center">
-  <a href="https://github.com/JulianPrieber/littlelink-custom"><img src="https://i.imgur.com/c1PYOs6.png" alt="About" width="310" ></a>
+  <a href="https://github.com/JulianPrieber/linkstack"><img src="https://i.imgur.com/c1PYOs6.png" alt="About" width="310" ></a>
 </p>
 
 <br>
@@ -75,17 +75,17 @@ This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux di
 <a name="3"></a>
 ## Pull
 
-`docker pull julianprieber/littlelink-custom`
+`docker pull julianprieber/linkstack`
 
 <br>
 
 <a name="4"></a>
 ## Supported Architectures
 
-- [`linux/amd64`](https://hub.docker.com/r/julianprieber/littlelink-custom/tags)
-- [`linux/arm/v6`](https://hub.docker.com/r/julianprieber/littlelink-custom/tags)
-- [`linux/arm/v7`](https://hub.docker.com/r/julianprieber/littlelink-custom/tags)
-- [`linux/arm64`](https://hub.docker.com/r/julianprieber/littlelink-custom/tags)
+- [`linux/amd64`](https://hub.docker.com/r/julianprieber/linkstack/tags)
+- [`linux/arm/v6`](https://hub.docker.com/r/julianprieber/linkstack/tags)
+- [`linux/arm/v7`](https://hub.docker.com/r/julianprieber/linkstack/tags)
+- [`linux/arm64`](https://hub.docker.com/r/julianprieber/linkstack/tags)
 
 <br>
 
@@ -122,12 +122,12 @@ Both HTTP and HTTPS are supported and exposed by default.
 
 <pre>
 docker run --detach \
-    --name littlelink-custom \
+    --name linkstack \
     --publish 80:80 \
     --publish 443:443 \
     --restart unless-stopped \
     --mount source=llc,target=/htdocs \
-    julianprieber/littlelink-custom
+    julianprieber/linkstack
 </pre>
 
 <br>
@@ -136,8 +136,8 @@ docker run --detach \
 
 <pre>
 docker run --detach \
-    --name littlelink-custom \
-    --hostname littlelink-custom \
+    --name linkstack \
+    --hostname linkstack \
     --env HTTP_SERVER_NAME="www.example.xyz" \
     --env HTTPS_SERVER_NAME="www.example.xyz" \
     --env SERVER_ADMIN="admin@example.xyz" \
@@ -148,7 +148,7 @@ docker run --detach \
     --publish 443:443 \
     --restart unless-stopped \
     --mount source=llc,target=/htdocs \
-    julianprieber/littlelink-custom
+    julianprieber/linkstack
 </pre>
 
 <br>
@@ -161,9 +161,9 @@ version: "3.8"
 
 services:
 
-  littlelink-custom:
-    hostname: 'littlelink-custom'
-    image: 'julianprieber/littlelink-custom:latest'
+  linkstack:
+    hostname: 'linkstack'
+    image: 'julianprieber/linkstack:latest'
     environment:
       TZ: 'Europe/Berlin'
       SERVER_ADMIN: 'youremail@gmail.com'
@@ -199,10 +199,10 @@ networks:
 <br>	
 
 ### Optional configuration:
-Optionally, you can change the app name in your ".env" file in the root directory of your LittleLink Custom installation. At the moment this is set to
-APP_NAME="LittleLink Custom" you can change "LittleLink Custom" to what ever you like. This setting defines the page title and welcome message.
+Optionally, you can change the app name in your ".env" file in the root directory of your LinkStack installation. At the moment this is set to
+APP_NAME="LinkStack" you can change "LinkStack" to what ever you like. This setting defines the page title and welcome message.
 
-For more configuration options, refer to the [documentation](https://littlelink-custom.com/docs/d/configuration-getting-started/).
+For more configuration options, refer to the [documentation](https://linkstack.com/docs/d/configuration-getting-started/).
 
 <br>
 
@@ -227,14 +227,14 @@ This updater allows you to update your installation with just one click.
 <a name="7"></a>
 ## Build
 
-**If you wish to build or modify your own docker version of LittleLink Custom, you can do so with the instructions below:**
+**If you wish to build or modify your own docker version of LinkStack, you can do so with the instructions below:**
 
-- Download this GitHub repository as well as the latest release of LittleLink Custom from [here](https://github.com/JulianPrieber/littlelink-custom/releases/latest/download/littlelink-custom.zip).
-- Place the downloaded release files directly into the littlelink-custom folder from [this repository](https://github.com/JulianPrieber/llc-docker/archive/refs/heads/main.zip).
+- Download this GitHub repository as well as the latest release of LinkStack from [here](https://github.com/JulianPrieber/linkstack/releases/latest/download/linkstack.zip).
+- Place the downloaded release files directly into the linkstack folder from [this repository](https://github.com/JulianPrieber/llc-docker/archive/refs/heads/main.zip).
 
 From the docker directory, run the command:
 <pre>
-docker build -t littlelink-custom .
+docker build -t linkstack .
 </pre>You can now set up your application on your defined ports.
 
 <br>
@@ -247,7 +247,7 @@ Persistent storage for docker containers is storage that is **not** lost when th
 This is advantageous since it means that data may be saved even if the container is removed. This is especially crucial when dealing with data that must be retained throughout restarts, such as a database.
 
 
-All files important to run LittleLink Custom are stored in the "htdocs" folder found in the root directory of your docker container.
+All files important to run LinkStack are stored in the "htdocs" folder found in the root directory of your docker container.
 
 We recommend mounting that entire folder to an external volume.
 

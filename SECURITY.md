@@ -7,8 +7,8 @@ The security of this application is left to the user. This application is distri
 
 ## Reporting a Vulnerability
 
-If you believe you have found a security vulnerability in this project, please contact the developer at [`littlelink.custom@gmail.com`](mailto:littlelink.custom@gmail.com). Include as much detail as possible about the potential issue, including the version of the project you are using. Thank you for helping to keep LittleLink Custom secure!
+If you believe you have found a security vulnerability in this project, please contact the developer at [`linkstackorg@gmail.com`](mailto:linkstackorg@gmail.com). Include as much detail as possible about the potential issue, including the version of the project you are using. Thank you for helping to keep LinkStack secure!
 
 <br>
 
-*For any questions regarding this please contact: [`littlelink.custom@gmail.com`](mailto:littlelink.custom@gmail.com)*
+*For any questions regarding this please contact: [`linkstackorg@gmail.com`](mailto:linkstackorg@gmail.com)*
