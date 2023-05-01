@@ -26,11 +26,11 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/JulianPrieber/llc-docker/stargazers"><img src="https://img.shields.io/github/stars/julianprieber/llc-docker?logo=github&style=flat&logo=appveyor&label=star%20this%20project"></img></a>
-<a href="https://hub.docker.com/r/julianprieber/linkstack"><img src="https://img.shields.io/docker/stars/julianprieber/linkstack?&style=flat&logo=appveyor&label=docker%20hub"></img></a>
+<a href="https://github.com/linkstackorg/linkstack-docker/stargazers"><img src="https://img.shields.io/github/stars/linkstackorg/linkstack-docker?logo=github&style=flat&logo=appveyor&label=star%20this%20project"></img></a>
+<a href="https://hub.docker.com/r/linkstackorg/linkstack"><img src="https://img.shields.io/docker/stars/linkstackorg/linkstack?&style=flat&logo=appveyor&label=docker%20hub"></img></a>
 <a href="https://discord.linkstack.com"><img src="https://img.shields.io/discord/955765706111193118?color=4A55CC&label=Discord&logo=discord&style=flat&logo=appveyor"></img></a>
-<a href="https://github.com/sponsors/julianprieber"><img src="https://img.shields.io/github/sponsors/JulianPrieber?color=BF4B8A&logo=githubsponsors&style=flat&logo=appveyor=Sponsor%20on%20Github"></img></a>
-<a href="https://patreon.com/julianprieber"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Djulianprieber%26type%3Dpatrons&style=flat&logo=appveyor"></img></a>
+<a href="https://github.com/sponsors/linkstackorg"><img src="https://img.shields.io/github/sponsors/linkstackorg?color=BF4B8A&logo=githubsponsors&style=flat&logo=appveyor=Sponsor%20on%20Github"></img></a>
+<a href="https://patreon.com/linkstackorg"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dlinkstackorg%26type%3Dpatrons&style=flat&logo=appveyor"></img></a>
 </p>
 
 <p align="center">
@@ -40,9 +40,9 @@
 <a name="1"></a>
 ## About
 
-The official docker version of [LinkStack](https://github.com/JulianPrieber/linkstack). This docker image is a simple to set up solution, containing everything you need to run LinkStack.
+The official docker version of [LinkStack](https://github.com/linkstackorg/linkstack). This docker image is a simple to set up solution, containing everything you need to run LinkStack.
 
-The docker version of LinkStack retains all the features and customization options of the [original version](https://github.com/JulianPrieber/linkstack).
+The docker version of LinkStack retains all the features and customization options of the [original version](https://github.com/linkstackorg/linkstack).
 
 This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux distribution designed to be small, simple and secure. The web server is running [Apache2](https://www.apache.org/), a free and open-source cross-platform web server software. The docker comes with [PHP 8.0](https://www.php.net/releases/8.0/en.php) for high compatibility and performance.
 
@@ -85,17 +85,17 @@ This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux di
 <a name="3"></a>
 ## Pull
 
-`docker pull julianprieber/linkstack`
+`docker pull linkstackorg/linkstack`
 
 <br>
 
 <a name="4"></a>
 ## Supported Architectures
 
-- [`linux/amd64`](https://hub.docker.com/r/julianprieber/linkstack/tags)
-- [`linux/arm/v6`](https://hub.docker.com/r/julianprieber/linkstack/tags)
-- [`linux/arm/v7`](https://hub.docker.com/r/julianprieber/linkstack/tags)
-- [`linux/arm64`](https://hub.docker.com/r/julianprieber/linkstack/tags)
+- [`linux/amd64`](https://hub.docker.com/r/linkstackorg/linkstack/tags)
+- [`linux/arm/v6`](https://hub.docker.com/r/linkstackorg/linkstack/tags)
+- [`linux/arm/v7`](https://hub.docker.com/r/linkstackorg/linkstack/tags)
+- [`linux/arm64`](https://hub.docker.com/r/linkstackorg/linkstack/tags)
 
 <br>
 
@@ -126,7 +126,7 @@ Both HTTP and HTTPS are supported and exposed by default.
 <br>
 
 **Create a new volume:**
-<pre>docker volume create llc</pre>
+<pre>docker volume create linkstack</pre>
 
 <br>
 
@@ -136,8 +136,8 @@ docker run --detach \
     --publish 80:80 \
     --publish 443:443 \
     --restart unless-stopped \
-    --mount source=llc,target=/htdocs \
-    julianprieber/linkstack
+    --mount source=linkstack,target=/htdocs \
+    linkstackorg/linkstack
 </pre>
 
 <br>
@@ -157,8 +157,8 @@ docker run --detach \
     --publish 80:80 \
     --publish 443:443 \
     --restart unless-stopped \
-    --mount source=llc,target=/htdocs \
-    julianprieber/linkstack
+    --mount source=linkstack,target=/htdocs \
+    linkstackorg/linkstack
 </pre>
 
 <br>
@@ -173,7 +173,7 @@ services:
 
   linkstack:
     hostname: 'linkstack'
-    image: 'julianprieber/linkstack:latest'
+    image: 'linkstackorg/linkstack:latest'
     environment:
       TZ: 'Europe/Berlin'
       SERVER_ADMIN: 'youremail@gmail.com'
@@ -239,8 +239,8 @@ This updater allows you to update your installation with just one click.
 
 **If you wish to build or modify your own docker version of LinkStack, you can do so with the instructions below:**
 
-- Download this GitHub repository as well as the latest release of LinkStack from [here](https://github.com/JulianPrieber/linkstack/releases/latest/download/linkstack.zip).
-- Place the downloaded release files directly into the linkstack folder from [this repository](https://github.com/JulianPrieber/llc-docker/archive/refs/heads/main.zip).
+- Download this GitHub repository as well as the latest release of LinkStack from [here](https://github.com/linkstackorg/linkstack/releases/latest/download/linkstack.zip).
+- Place the downloaded release files directly into the linkstack folder from [this repository](https://github.com/linkstackorg/linkstack-docker/archive/refs/heads/main.zip).
 
 From the docker directory, run the command:
 <pre>
@@ -290,13 +290,13 @@ If you wish to save only selective files, you may save the following files and f
 
 |                   ❌ Invalid setup ❌                    |
 | ----------------------------------------------------- |
-|<a href="https://github.com/JulianPrieber/llc-docker#8"><img src="https://i.imgur.com/QSCDU6w.png"></a>|
+|<a href="https://github.com/linkstackorg/linkstack-docker#8"><img src="https://i.imgur.com/QSCDU6w.png"></a>|
 
 <br>
 
 |                   ⚠️ Incorrect ⚠️                    |                    ✅ Correct ✅                     |  
 | ----------------------------------------------------- | ----------------------------------------------------- |
-|<a href="https://github.com/JulianPrieber/llc-docker#8"><img width="500" src="https://i.imgur.com/3ellGki.png"></a>|<a href="https://github.com/JulianPrieber/llc-docker#8"><img width="500" src="https://i.imgur.com/EfKRGSJ.png"></a>|
+|<a href="https://github.com/linkstackorg/linkstack-docker#8"><img width="500" src="https://i.imgur.com/3ellGki.png"></a>|<a href="https://github.com/linkstackorg/linkstack-docker#8"><img width="500" src="https://i.imgur.com/EfKRGSJ.png"></a>|
 |              Invalid header configuration             |               Valid header configuration              |
 
 <br>
