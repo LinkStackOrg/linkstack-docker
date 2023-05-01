@@ -34,7 +34,7 @@
 </p>
 
 <p align="center">
-  <a href="https://hub.docker.com/r/julianprieber/linkstack"><img src="https://i.imgur.com/u9W2tg1.png" alt="Docker Hub" width="280" ></a>
+  <a href="https://hub.docker.com/r/linkstackorg/linkstack"><img src="https://i.imgur.com/u9W2tg1.png" alt="Docker Hub" width="280" ></a>
 </p>
 
 <a name="1"></a>
