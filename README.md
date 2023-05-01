@@ -158,7 +158,7 @@ docker run --detach \
 
 <br>
 
-#### Docker Compose
+<!-- #### Docker Compose
 Example config.
 
 <pre>
@@ -201,7 +201,7 @@ networks:
     name: 'db-redis'
 </pre>
 
-<br>	
+<br>	 -->
 
 ### Optional configuration:
 Optionally, you can change the app name in your ".env" file in the root directory of your LinkStack installation. At the moment this is set to
