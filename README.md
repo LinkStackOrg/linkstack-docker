@@ -54,7 +54,12 @@ This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux di
 ## About LinkStack
 
 <p align="center">
-<img width="450" src="https://i.imgur.com/mtP2K3K.png">
+<a href="https://github.com/linkstackorg/linkstack-docker">
+<picture>
+  <source media="(prefers-color-scheme: dark)" width="600px" srcset="https://i.imgur.com/tSHEDPv.png">
+  <img width="600px" src="https://i.imgur.com/0gH7UKM.png">
+</picture>
+</a>
 </p>
 
 <p align="center">
@@ -72,7 +77,7 @@ This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux di
 <br>
 
 <p align="center">
-  <a href="https://github.com/JulianPrieber/linkstack"><img src="https://i.imgur.com/c1PYOs6.png" alt="About" width="310" ></a>
+  <a href="https://github.com/linkstackorg/linkstack">About LinkStack</a>
 </p>
 
 <br>
