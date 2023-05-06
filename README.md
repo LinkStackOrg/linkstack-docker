@@ -285,25 +285,10 @@ If you wish to save only selective files, you may save the following files and f
 <a name="9"></a>
 ## Reverse Proxy
 
-<br>
-
-|                   ❌ Invalid setup ❌                    |
-| ----------------------------------------------------- |
-|<a href="https://github.com/linkstackorg/linkstack-docker#8"><img src="https://i.imgur.com/QSCDU6w.png"></a>|
-
-<br>
-
-|                   ⚠️ Incorrect ⚠️                    |                    ✅ Correct ✅                     |  
-| ----------------------------------------------------- | ----------------------------------------------------- |
-|<a href="https://github.com/linkstackorg/linkstack-docker#8"><img width="500" src="https://i.imgur.com/3ellGki.png"></a>|<a href="https://github.com/linkstackorg/linkstack-docker#8"><img width="500" src="https://i.imgur.com/EfKRGSJ.png"></a>|
-|              Invalid header configuration             |               Valid header configuration              |
-
-<br>
-
 ### NGINX:
 
 **Below is an example NGINX setup for a reverse proxy.**
-<details><pre>
+<pre>
 
 server {
   listen        443 ssl;
@@ -337,7 +322,7 @@ server {
   }
 }
 
-</pre></details>
+</pre>
 
 <br>
 <br>
