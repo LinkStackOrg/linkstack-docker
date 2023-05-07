@@ -272,9 +272,9 @@ If you wish to save only selective files, you may save the following files and f
 /htdocs/.env
 /htdocs/database/database.sqlite
 /htdocs/config/advanced-config.php
-/htdocs/littlelink/images/avatar.png
+/htdocs/assets/linkstack/images/avatar.png
 /htdocs/themes (folder)
-/htdocs/img (folder)
+/htdocs/assets/img (folder)
 ```
 
 **This might change with future releases.**
