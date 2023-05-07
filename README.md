@@ -287,7 +287,8 @@ If you wish to save only selective files, you may save the following files and f
 
 ### NGINX:
 
-**Below is an example NGINX setup for a reverse proxy.**
+**Below is an example NGINX setup for a reverse proxy.**<br>
+<ins>Make sure to use HTTPS to access your container to avoid mixed content errors</ins>
 <pre>
 
 server {
