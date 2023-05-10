@@ -194,14 +194,6 @@ volumes:
 
 <br>
 
-### Optional configuration:
-Optionally, you can change the app name in your ".env" file in the root directory of your LinkStack installation. At the moment this is set to
-APP_NAME="LinkStack" you can change "LinkStack" to what ever you like. This setting defines the page title and welcome message.
-
-For more configuration options, refer to the [documentation](https://linkstack.com/docs/d/configuration-getting-started/).
-
-<br>
-
 <a name="6"></a>
 ## Updating
 
