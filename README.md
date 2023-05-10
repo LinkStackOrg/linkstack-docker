@@ -162,7 +162,8 @@ docker run --detach \
 
 <br>
 
-<!-- #### Docker Compose
+#### Docker Compose
+<ins>Use HTTPS for your reverse proxy to avoid issues</ins><br>
 Example config.
 
 <pre>
@@ -175,37 +176,23 @@ services:
     image: 'linkstackorg/linkstack:latest'
     environment:
       TZ: 'Europe/Berlin'
-      SERVER_ADMIN: 'youremail@gmail.com'
-      HTTP_SERVER_NAME: 'yourdomain.com'
-      HTTPS_SERVER_NAME: 'yourdomain.com'
+      SERVER_ADMIN: 'admin@example.com'
+      HTTP_SERVER_NAME: 'example.com'
+      HTTPS_SERVER_NAME: 'example.com'
       LOG_LEVEL: 'info'
       PHP_MEMORY_LIMIT: '256M'
       UPLOAD_MAX_FILESIZE: '8M'
     volumes:
-      - '/opt/docker/configs/littlelink/config/.env:/htdocs/.env:rw'
-      - '/opt/docker/configs/littlelink/config/advanced-config.php:/htdocs/config/advanced-config.php:rw'
-      - '/opt/docker/configs/littlelink/config/img:/htdocs/img:rw'
+      - 'linkstack_data:/htdocs'
     ports:
-      - '8088:80'
-      - '8090:443'
+      - '8190:443'
     restart: unless-stopped
-    networks:
-      - 'mariadb'
-      - 'misc'
-      - 'redis'
-networks:
-  misc:
-    external: true
-    name: 'misc'
-  mariadb:
-    external: true
-    name: 'db-mariadb'
-  redis:
-    external: true
-    name: 'db-redis'
+
+volumes:
+  linkstack_data:
 </pre>
 
-<br>	 -->
+<br>
 
 ### Optional configuration:
 Optionally, you can change the app name in your ".env" file in the root directory of your LinkStack installation. At the moment this is set to
