@@ -75,6 +75,6 @@ RUN sed -i 's/#LoadModule deflate_module/LoadModule deflate_module/' /etc/apache
     && echo 'AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json' >> /etc/apache2/httpd.conf
 
 # Set console entry path
-WORKDIR /htdocs/littlelink
+WORKDIR /htdocs
 
 CMD ["docker-entrypoint.sh"]
