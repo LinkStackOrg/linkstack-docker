@@ -1,11 +1,11 @@
 <p align="center">
-  <img width="200px" src="https://linkstack.org/wp-content/uploads/2023/04/logo-animated.svg"><br>
-<picture>
-  <source media="(prefers-color-scheme: dark)" width="400px" srcset="https://i.imgur.com/d1mdtEw.png">
-  <img width="400px" src="https://i.imgur.com/pPMgaqF.png">
-</picture>
+  <img width="200px" src="https://raw.githubusercontent.com/LinkStackOrg/branding/main/logo/svg/logo_animated.svg"><br>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" width="400px" srcset="https://raw.githubusercontent.com/LinkStackOrg/branding/main/badges/png/website_light.png">
+    <img width="400px" src="https://raw.githubusercontent.com/LinkStackOrg/branding/main/badges/png/website_dark.png">
+  </picture>
 </p>
-
+  
 <h3 align="center">Docker Edition</h3><br>
 <h4 align="center">Pull, deploy, enjoy!</h3><br>
 
@@ -55,8 +55,8 @@ This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux di
 <p align="center">
 <a href="https://github.com/linkstackorg/linkstack-docker">
 <picture>
-  <source media="(prefers-color-scheme: dark)" width="600px" srcset="https://i.imgur.com/tSHEDPv.png">
-  <img width="600px" src="https://i.imgur.com/0gH7UKM.png">
+  <source media="(prefers-color-scheme: dark)" width="600px" srcset="https://raw.githubusercontent.com/LinkStackOrg/branding/main/marketing/docker_edition_dark.png">
+  <img width="600px" src="https://raw.githubusercontent.com/LinkStackOrg/branding/main/marketing/docker_edition_light.png">
 </picture>
 </a>
 </p>
