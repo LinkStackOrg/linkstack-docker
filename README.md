@@ -88,6 +88,12 @@ This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux di
 
 <br>
 
+<i>Alternative mirror:</i>
+
+`docker pull ghcr.io/linkstackorg/linkstack`
+
+<br>
+
 <a name="4"></a>
 ## Supported Architectures
 
