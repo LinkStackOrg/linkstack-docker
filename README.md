@@ -84,13 +84,17 @@ This docker is based on [Alpine Linux](https://www.alpinelinux.org/), a Linux di
 <a name="3"></a>
 ## Pull
 
-`docker pull linkstackorg/linkstack`
+```shell
+docker pull linkstackorg/linkstack
+```
 
 <br>
 
 <i>Alternative mirror:</i>
 
-`docker pull ghcr.io/linkstackorg/linkstack`
+```shell
+docker pull ghcr.io/linkstackorg/linkstack
+```
 
 <br>
 
