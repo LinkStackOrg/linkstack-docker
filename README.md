@@ -7,7 +7,7 @@
 </p>
   
 <h3 align="center">Docker Edition</h3><br>
-<h4 align="center">Pull, deploy, enjoy!</h3><br>https://raw.githubusercontent.com/LinkStackOrg/branding/main/badges/png/docker-hub.png
+<h4 align="center">Pull, deploy, enjoy!</h3><br>
 
 <p align="center">
   <a href="#1">About</a> •
