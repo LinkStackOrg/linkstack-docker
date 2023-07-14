@@ -30,6 +30,7 @@ RUN apk --no-cache --update \
     php82-pdo_sqlite \
     php82-phar \
     php82-session \
+    php82-simplexml \
     php82-xml \
     php82-tokenizer \
     php82-zip \
