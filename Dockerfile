@@ -38,6 +38,9 @@ RUN apk --no-cache --update \
     && mkdir /htdocs
 
 COPY linkstack /htdocs
+COPY configs/apache2/httpd.conf /etc/apache2/httpd.conf
+COPY configs/apache2/ssl.conf /etc/apache2/conf.d/ssl.conf
+
 RUN chown -R apache:apache /htdocs
 RUN find /htdocs -type d -print0 | xargs -0 chmod 0755
 RUN find /htdocs -type f -print0 | xargs -0 chmod 0644
