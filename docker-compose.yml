@@ -1,7 +1,6 @@
 version: "3.8"
 
 services:
-
   linkstack:
     hostname: 'linkstack'
     image: 'linkstackorg/linkstack:latest'
@@ -16,10 +15,19 @@ services:
     volumes:
       - 'linkstack_data:/htdocs'
     ports:
-      - '8188:80'
-      - '8190:443'
+      - '8080:80'
+      - '8081:443'
+    depends_on:
+      - mysql
+    links:
+      - mysql
     restart: unless-stopped
+  mysql:
+    image: mysql:8
+    environment:
+        MYSQL_ROOT_PASSWORD: xeFgUGb5mPPn5q2d
+    ports:
+        - 3306:3306
 
 volumes:
   linkstack_data:
-

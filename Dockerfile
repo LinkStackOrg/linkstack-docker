@@ -40,6 +40,7 @@ RUN apk --no-cache --update \
 COPY linkstack /htdocs
 COPY configs/apache2/httpd.conf /etc/apache2/httpd.conf
 COPY configs/apache2/ssl.conf /etc/apache2/conf.d/ssl.conf
+COPY configs/php/php.ini /etc/php8.2/php.ini
 
 RUN chown -R apache:apache /htdocs
 RUN find /htdocs -type d -print0 | xargs -0 chmod 0755
