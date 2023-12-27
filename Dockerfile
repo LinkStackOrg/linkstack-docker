@@ -50,14 +50,6 @@ COPY --chmod=0755 docker-entrypoint.sh /usr/local/bin/
 
 HEALTHCHECK CMD curl -f http://localhost -A "HealthCheck" || exit 1
 
-# Forward Apache access and error logs to Docker's log collector.
-# Optional last line adds extra verbosity with for example:
-# [ssl:info] [pid 33] [client 10.0.5.8:45542] AH01964: Connection to child 2 established (server your.domain:443)
-RUN ln -sf /dev/stdout /var/www/logs/access.log \
- && ln -sf /dev/stderr /var/www/logs/error.log \
- && ln -sf /dev/stderr /var/www/logs/ssl-access.log
-# && ln -sf /dev/stderr /var/www/logs/ssl-error.log
-
 # Set console entry path
 WORKDIR /htdocs
 
