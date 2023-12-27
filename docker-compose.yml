@@ -17,11 +17,13 @@ services:
     ports:
       - '8080:80'
       - '8081:443'
+    restart: unless-stopped
+    user: apache:apache
+    # read_only: true
     depends_on:
       - mysql
     links:
       - mysql
-    restart: unless-stopped
   mysql:
     image: mysql:8
     environment:
