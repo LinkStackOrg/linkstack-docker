@@ -1,7 +1,6 @@
 version: "3.8"
 
 services:
-
   linkstack:
     hostname: 'linkstack'
     image: 'linkstackorg/linkstack:latest'
@@ -14,12 +13,20 @@ services:
       PHP_MEMORY_LIMIT: '256M'
       UPLOAD_MAX_FILESIZE: '8M'
     volumes:
-      - 'linkstack_data:/htdocs'
+      - '/htdocs'
     ports:
-      - '8188:80'
-      - '8190:443'
+      - '8080:80'
+      - '8081:443'
     restart: unless-stopped
-
-volumes:
-  linkstack_data:
-
+    user: apache:apache
+    # read_only: true
+    depends_on:
+      - mysql
+    links:
+      - mysql
+  mysql:
+    image: mysql:8
+    environment:
+        MYSQL_ROOT_PASSWORD: xeFgUGb5mPPn5q2d
+    ports:
+        - 3306:3306
