@@ -34,6 +34,7 @@ RUN apk --no-cache --update \
     php82-tokenizer \
     php82-zip \
     php82-xmlwriter \
+    php82-redis \
     tzdata \
     && mkdir /htdocs
 
