@@ -1,0 +1,42 @@
+name: 🐳 Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    name: 🐳 Build and Push Docker Image
+    env:
+      DOCKER_BUILDKIT: 1
+      LS_RELEASE_TAG: "v4.8.4"
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+      
+      - name: 💿 Download linkstack release
+        uses: robinraju/release-downloader@v1.11
+        with:
+          repository: "LinkStackOrg/LinkStack"
+          tag: "${{ env.LS_RELEASE_TAG }}"
+          fileName: "linkstack.zip"
+          tarBall: false
+          zipBall: false
+          extract: true
+      
+      - name: 🔓 Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: "${{ vars.DOCKERHUB_USERNAME }}"
+          password: "${{ secrets.DOCKERHUB_TOKEN }}"
+      
+      - name: 🌐 Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: "${{ vars.DOCKERHUB_USERNAME }}/linkstack:${{ env.LS_RELEASE_TAG }}"
