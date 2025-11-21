@@ -46,6 +46,8 @@ COPY configs/php/php.ini /etc/php8.2/php.ini
 RUN chown apache:apache /etc/ssl/apache2/server.pem
 RUN chown apache:apache /etc/ssl/apache2/server.key
 
+RUN mkdir -p /var/log/apache2 /var/cache/apache2 /run/apache2 \
+ && chown -R apache:apache /var/log/apache2 /var/cache/apache2 /run/apache2
 RUN chown -R apache:apache /htdocs
 RUN find /htdocs -type d -print0 | xargs -0 chmod 0755
 RUN find /htdocs -type f -print0 | xargs -0 chmod 0644
