@@ -30,6 +30,23 @@ printf '|                      LINKSTACK v%s%*s|\n' "${v}" "$vlen" | tr ' ' " "
 # + ---------------- + #
 
 echo '+ ------------------------------------------------------------------ +'
+echo '| Updating Configuration: Apache Base (/etc/apache2/httpd.conf)      |'
+echo '| Updating Configuration: Apache SSL  (/etc/apache2/conf.d/ssl.conf) |'
+
+# + ------------- + #
+# | -- PHP.INI -- | #
+# + ------------- + #
+
+echo '| Updating Configuration: PHP         (/etc/php83/40-custom.ini)     |'
+# Gebe die aktuellen PHP-Einstellungen aus
+echo "| Setting PHP Configuration:                                         |"
+echo "| upload_max_filesize = ${UPLOAD_MAX_FILESIZE}                       |"
+echo "| memory_limit = ${PHP_MEMORY_LIMIT}                                 |"
+echo "| date.timezone = ${TZ}                                              |"
+# Setze die PHP-Konfiguration
+echo "upload_max_filesize = ${UPLOAD_MAX_FILESIZE}" >> /etc/php83/conf.d/40-custom.ini
+echo "memory_limit = ${PHP_MEMORY_LIMIT}" >> /etc/php83/conf.d/40-custom.ini
+echo "date.timezone = ${TZ}" >> /etc/php83/conf.d/40-custom.ini
 
 # + ---------- + #
 # | -- MISC -- | #
@@ -37,7 +54,7 @@ echo '+ ------------------------------------------------------------------ +'
 
 # Apache gets grumpy about PID files pre-existing
 rm -f /htdocs/httpd.pid
-
+echo '| Updating Configuration: Complete                                   |'
 echo '| ------------------------------------------------------------------ |'
 echo '| Running Apache                                                     |'
 echo '+ ------------------------------------------------------------------ +'
