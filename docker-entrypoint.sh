@@ -7,13 +7,13 @@ set -eu
 # | -- VARS -- | #
 # + ---------- + #
 
-SERVER_ADMIN="${SERVER_ADMIN:-you@example.com}"
-HTTP_SERVER_NAME="${HTTP_SERVER_NAME:-localhost}"
-HTTPS_SERVER_NAME="${HTTPS_SERVER_NAME:-localhost}"
-LOG_LEVEL="${LOG_LEVEL:-info}"
-TZ="${TZ:-UTC}"
-PHP_MEMORY_LIMIT="${PHP_MEMORY_LIMIT:-256M}"
-UPLOAD_MAX_FILESIZE="${UPLOAD_MAX_FILESIZE:-8M}"
+export SERVER_ADMIN="${SERVER_ADMIN:-you@example.com}"
+export HTTP_SERVER_NAME="${HTTP_SERVER_NAME:-localhost}"
+export HTTPS_SERVER_NAME="${HTTPS_SERVER_NAME:-localhost}"
+export LOG_LEVEL="${LOG_LEVEL:-info}"
+export TZ="${TZ:-UTC}"
+export PHP_MEMORY_LIMIT="${PHP_MEMORY_LIMIT:-256M}"
+export UPLOAD_MAX_FILESIZE="${UPLOAD_MAX_FILESIZE:-8M}"
 
 # Read Current LLC Version
 # When version.json has CR/LF, it fx up, so have to add tr to remove the line endings.
