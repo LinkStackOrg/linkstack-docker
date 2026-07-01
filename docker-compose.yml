@@ -1,9 +1,11 @@
-version: "3.8"
-
 services:
   linkstack:
+    container_name: linkstack
     hostname: 'linkstack'
-    image: 'linkstackorg/linkstack:latest'
+    # image: 'linkstackorg/linkstack:latest'
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       TZ: 'Europe/Berlin'
       SERVER_ADMIN: 'admin@example.com'
@@ -13,20 +15,20 @@ services:
       PHP_MEMORY_LIMIT: '256M'
       UPLOAD_MAX_FILESIZE: '8M'
     volumes:
-      - '/htdocs'
+      - './linkstack:/htdocs'
     ports:
-      - '8080:80'
-      - '8081:443'
+      - '8190:80'
+      - '8191:443'
     restart: unless-stopped
     user: apache:apache
     # read_only: true
-    depends_on:
-      - mysql
-    links:
-      - mysql
-  mysql:
-    image: mysql:8
-    environment:
-        MYSQL_ROOT_PASSWORD: xeFgUGb5mPPn5q2d
-    ports:
-        - 3306:3306
+  #   depends_on: # Uncomment from here to use MySQL instead of SQLite
+  #     - mysql
+  #   links:
+  #     - mysql
+  # mysql:
+  #   image: mysql:8
+  #   environment:
+  #       MYSQL_ROOT_PASSWORD: xeFgUGb5mPPn5q2d
+  #   ports:
+  #       - 3306:3306

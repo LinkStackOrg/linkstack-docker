@@ -19,6 +19,11 @@ export UPLOAD_MAX_FILESIZE="${UPLOAD_MAX_FILESIZE:-8M}"
 # When version.json has CR/LF, it fx up, so have to add tr to remove the line endings.
 v="$(cat /htdocs/version.json | tr -d '\r\n')"
 
+if [ -z "$v" ]; then
+	cp -ar /linkstack/linkstack/. /htdocs
+	v="$(cat /htdocs/version.json | tr -d '\r\n')"
+fi
+
 # Calc length of whitespace we need, based on version length.
 vlen="$((27-${#v}))"
 

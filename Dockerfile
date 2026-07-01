@@ -9,6 +9,8 @@ RUN apk --no-cache --update \
     add apache2 \
     apache2-ssl \
     curl \
+    jq \
+    7zip \
     php83-apache2 \
     php83-bcmath \
     php83-bz2 \
@@ -38,7 +40,14 @@ RUN apk --no-cache --update \
     tzdata \
     && mkdir /htdocs
 
-COPY linkstack /htdocs
+RUN TAG=$(curl -s https://api.github.com/repos/LinkStackOrg/LinkStack/releases/latest | jq -r .tag_name) && \
+    curl -L -o linkstack.zip \
+      "https://github.com/LinkStackOrg/LinkStack/releases/download/${TAG}/linkstack.zip" && \
+    7z x linkstack.zip -o/linkstack && \
+    cp -ar /linkstack/linkstack/. /htdocs && \
+    rm linkstack.zip
+
+
 COPY configs/apache2/httpd.conf /etc/apache2/httpd.conf
 COPY configs/apache2/ssl.conf /etc/apache2/conf.d/ssl.conf
 COPY configs/php/php.ini /etc/php83/conf.d/40-custom.ini
