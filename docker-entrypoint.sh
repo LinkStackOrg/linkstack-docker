@@ -14,6 +14,7 @@ export LOG_LEVEL="${LOG_LEVEL:-info}"
 export TZ="${TZ:-UTC}"
 export PHP_MEMORY_LIMIT="${PHP_MEMORY_LIMIT:-256M}"
 export UPLOAD_MAX_FILESIZE="${UPLOAD_MAX_FILESIZE:-8M}"
+export FORCE_HTTPS="${FORCE_HTTPS:-false}"
 
 # Read Current LLC Version
 # When version.json has CR/LF, it fx up, so have to add tr to remove the line endings.
@@ -50,6 +51,9 @@ echo "date.timezone = ${TZ}" >> /etc/php83/conf.d/40-custom.ini
 # + ---------- + #
 # | -- MISC -- | #
 # + ---------- + #
+
+# Handle forced https or not with an environment var
+sed -i "s/^FORCE_HTTPS.*/FORCE_HTTPS=${FORCE_HTTPS}/g" /htdocs/.env
 
 # Apache gets grumpy about PID files pre-existing
 rm -f /htdocs/httpd.pid
