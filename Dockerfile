@@ -41,6 +41,7 @@ RUN apk --no-cache --update \
 COPY linkstack /htdocs
 COPY configs/apache2/httpd.conf /etc/apache2/httpd.conf
 COPY configs/apache2/ssl.conf /etc/apache2/conf.d/ssl.conf
+COPY configs/apache2/runtime-logs.conf /etc/apache2/conf.d/runtime-logs.conf
 COPY configs/php/php.ini /etc/php83/conf.d/40-custom.ini
 
 RUN chown apache:apache /etc/ssl/apache2/server.pem

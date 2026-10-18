@@ -269,6 +269,38 @@ If you wish to save only selective files, you may save the following files and f
 **This might change with future releases.**
 </details>
 
+### Runtime log protection
+
+The image includes `configs/apache2/runtime-logs.conf`, which denies HTTP and
+HTTPS access to `/htdocs/storage/logs` and `/htdocs/assets/storage/logs`, including
+rotated logs and directory listings. The rule is stored outside `/htdocs`, so an
+older or missing `.htaccess` in a persistent application volume does not remove
+this protection. It does not disable log writing or deny public storage assets.
+
+To adopt this protection, build or obtain an image containing this change and
+recreate the container while retaining the existing application volume. Updating
+only the application files in `/htdocs` does not install the image-side rule.
+Do not delete the data volume. Custom mounts replacing `/etc/apache2` or its
+configuration must incorporate the rule separately. This change protects the
+specified log directories, not every private application artifact.
+
+### Testing runtime log protection
+
+From a checkout of this Docker repository:
+
+```shell
+docker build -t linkstack-log-test .
+python3 tests/runtime_logs.py linkstack-log-test
+```
+
+Requires Docker and Python 3. The test uses synthetic application-volume fixtures
+with missing, legacy, and protective `.htaccess` files. No LinkStack release or
+production data is needed for this web-server test. Containers use no external
+network and publish no ports. It asserts HTTP/HTTPS 403 responses for private
+logs (including rotated files), working PHP/public assets/public storage, Apache
+configuration validity, and continued unprivileged log writing. A full Laravel
+application smoke test should additionally be performed before release.
+
 <br>
 
 <a name="9"></a>
