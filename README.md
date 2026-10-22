@@ -39,7 +39,7 @@
 <a name="1"></a>
 ## About
 
-The official docker version of [LinkStack](https://github.com/linkstackorg/linkstack). This docker image is a simple to set up solution, containing everything you need to run LinkStack.
+The official docker version of [LinkStack](https://github.com/linkstackorg/linkstack). This docker image is a simple to set up solution, containing everything you need to run LinkStack, plus a copy of the latest release of LinkStack.
 
 The docker version of LinkStack retains all the features and customization options of the [original version](https://github.com/linkstackorg/linkstack).
 
@@ -139,7 +139,7 @@ Both HTTP and HTTPS are supported and exposed by default.
 
 <br>
 
-<pre>
+```bash
 docker run --detach \
     --name linkstack \
     --publish 80:80 \
@@ -147,13 +147,13 @@ docker run --detach \
     --restart unless-stopped \
     --mount source=linkstack,target=/htdocs \
     linkstackorg/linkstack
-</pre>
+```
 
 <br>
 
 #### Custom deployment
 
-<pre>
+```bash
 docker run --detach \
     --name linkstack \
     --hostname linkstack \
@@ -168,7 +168,7 @@ docker run --detach \
     --restart unless-stopped \
     --mount source=linkstack,target=/htdocs \
     linkstackorg/linkstack
-</pre>
+```
 
 <br>
 
@@ -176,12 +176,10 @@ docker run --detach \
 <ins>Use HTTPS for your reverse proxy to avoid issues</ins><br>
 Example config.
 
-<pre>
-version: "3.8"
-
+```yml
 services:
-
   linkstack:
+    container_name: linkstack
     hostname: 'linkstack'
     image: 'linkstackorg/linkstack:latest'
     environment:
@@ -195,12 +193,13 @@ services:
     volumes:
       - 'linkstack_data:/htdocs'
     ports:
+      - '8180:80'
       - '8190:443'
     restart: unless-stopped
 
 volumes:
   linkstack_data:
-</pre>
+```
 
 <br>
 
@@ -227,13 +226,17 @@ This updater allows you to update your installation with just one click.
 
 **If you wish to build or modify your own docker version of LinkStack, you can do so with the instructions below:**
 
-- Download this GitHub repository as well as the latest release of LinkStack from [here](https://github.com/linkstackorg/linkstack/releases/latest/download/linkstack.zip).
-- Place the downloaded release files directly into the linkstack folder from [this repository](https://github.com/linkstackorg/linkstack-docker/archive/refs/heads/main.zip).
+- Download this GitHub repository.  
+- Use he included docker-compose.yml to run the stack.  
 
-From the docker directory, run the command:
-<pre>
-docker build -t linkstack .
-</pre>You can now set up your application on your defined ports.
+
+```bash
+$ git clone https://github.com/LinkStackOrg/linkstack-docker.git
+$ cd linkstack-docker
+$ chown -R 100:101 ./linkstack # Required as the container runs with permissions for apache:apache
+$ docker compose up -d --build
+```
+You can now set up your application on your defined ports.
 
 <br>
 
