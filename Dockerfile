@@ -58,7 +58,7 @@ RUN chmod -R 755 /etc/php83 && \
 
 USER apache:apache
 
-HEALTHCHECK CMD curl -f http://localhost -A "HealthCheck" || exit 1
+HEALTHCHECK CMD curl -fsS -A "HealthCheck" -H "Host: ${HTTP_SERVER_NAME:-localhost}" http://127.0.0.1/ >/dev/null || exit 1
 
 # Set console entry path
 WORKDIR /htdocs
