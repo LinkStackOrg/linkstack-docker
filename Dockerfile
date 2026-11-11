@@ -1,4 +1,4 @@
-FROM alpine:3.23.4
+FROM alpine:3.24.4
 LABEL maintainer="JulianPrieber"
 LABEL description="LinkStack Docker"
 
